@@ -1,6 +1,6 @@
 # Habits Tracker
 
-Doubletapp intership task.
+Intership task.
 
 # Задание
 Создать приложения для трекинга привычек
