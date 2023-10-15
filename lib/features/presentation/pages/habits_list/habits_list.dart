@@ -70,6 +70,7 @@ class _HabitsListPageState extends State<HabitsListPage>
         },
         child: BlocBuilder<HabitsListBloc, HabitsListState>(
           builder: (context, state) {
+            print(state);
             if (state.isLoading) {
               return const Center(
                 child: SpinKitSpinningLines(color: Palette.lightGreenSalad),
@@ -86,11 +87,11 @@ class _HabitsListPageState extends State<HabitsListPage>
                     },
                   ),
                 );
-              } else if (state.isFailed) {
-                return LoadingErrorPlaceholder(message: state.message);
               } else {
                 return const EmptyPlaceholder();
               }
+            } else if (state.isFailed) {
+              return LoadingErrorPlaceholder(message: state.message);
             }
             return Container();
           },

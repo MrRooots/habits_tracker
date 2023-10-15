@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:habits_tracker/core/themes/palette.dart';
 
 class LoadingErrorPlaceholder extends StatelessWidget {
   final String message;
@@ -15,9 +16,17 @@ class LoadingErrorPlaceholder extends StatelessWidget {
           const Flexible(
             child: Image(image: AssetImage('assets/images/empty.png')),
           ),
+          const Text(
+            'Failed to load habits!',
+            style: TextStyle(
+              fontSize: 16.0,
+              fontWeight: FontWeight.bold,
+              color: Palette.red,
+            ),
+            textAlign: TextAlign.center,
+          ),
           Text(
             message,
-            style: const TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
           ),
         ],

@@ -49,7 +49,8 @@ final class LocalDataSourceImpl implements LocalDataSource {
       final Box<HabitModel> box = await hiveManager.openHabitBox();
       final List<HabitModel> habits = box.values
           .where((habit) =>
-              habit.type == type && habit.title.toLowerCase().contains(query))
+              habit.type == type &&
+              habit.title.toLowerCase().contains(query.toLowerCase()))
           .toList();
 
       if (sortByDate) {
