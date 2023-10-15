@@ -11,6 +11,7 @@ import 'package:habits_tracker/features/presentation/bloc/habits_list/habits_lis
 import 'package:habits_tracker/features/presentation/pages/habits_list/components/empty_placeholder.dart';
 
 import 'package:habits_tracker/features/presentation/pages/habits_list/components/habit_card.dart';
+import 'package:habits_tracker/features/presentation/pages/habits_list/components/loading_error_placeholder.dart';
 
 import 'package:habits_tracker/features/presentation/widgets/bottom_search_sheet.dart';
 import 'package:habits_tracker/features/presentation/widgets/custom_snack_bar.dart';
@@ -85,6 +86,8 @@ class _HabitsListPageState extends State<HabitsListPage>
                     },
                   ),
                 );
+              } else if (state.isFailed) {
+                return LoadingErrorPlaceholder(message: state.message);
               } else {
                 return const EmptyPlaceholder();
               }
